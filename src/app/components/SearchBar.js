@@ -8,7 +8,7 @@ const SearchBar = () => {
 
     const handleSearch = async () => { // Make the function asynchronous
         try {
-            const response = await axios.get(`http://3.94.98.114/hs_code?description=${search}`); // Use template literals to insert the search query
+            const response = await axios.get(`http://ec2-3-94-98-114.compute-1.amazonaws.com/hs_code?description=${search}`); // Use template literals to insert the search query
             console.log(response.data);
             setResult(response.data); // Store the response data
         } catch (error) {
@@ -44,7 +44,7 @@ const SearchBar = () => {
                       <thead>
                           <tr className="w-full h-16 border-gray-300 border-b py-8">
                               <th className="pl-14 text-gray-600 font-normal pr-6 text-left text-sm tracking-normal leading-4">Code</th>
-                              <th className="text-gray-600 font-normal pr-6 text-left text-sm tracking-normal leading-4">Value</th>
+                              <th className="text-gray-600 font-normal pr-6 text-left text-sm tracking-normal leading-4">Confidence</th>
                               <th className="text-gray-600 font-normal pr-6 text-left text-sm tracking-normal leading-4">Keywords</th>
                           </tr>
                       </thead>
