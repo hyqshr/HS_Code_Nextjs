@@ -8,8 +8,9 @@ const SearchBar = () => {
 
     const handleSearch = async () => { // Make the function asynchronous
         try {
-            const response = await axios.get(`http://ec2-3-94-98-114.compute-1.amazonaws.com/hs_code?description=${search}`); // Use template literals to insert the search query
-            console.log(response.data);
+            const response = await axios.get(
+                `https://faidsfxae2m7pbhmcn2ggxf6ui0tklzk.lambda-url.us-east-1.on.aws/?description=${search}`
+                ); 
             setResult(response.data); // Store the response data
         } catch (error) {
             console.error("There was an error fetching the data:", error);
